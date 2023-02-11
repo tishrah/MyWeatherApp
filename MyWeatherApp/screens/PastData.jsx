@@ -64,6 +64,7 @@ const PastData = ({route, navigation}) => {
           renderItem={({item}) => (
             <View style={styles.list}>
               <TouchableHighlight
+                style={{borderRadius:20}}
                 underlayColor="azure"
                 onPress={() =>
                   navigation.navigate('WeatherCard', {
@@ -121,7 +122,7 @@ const styles = StyleSheet.create({
   tile: {
     flex: 1,
     alignItems: 'center',
-    padding: 12,
+    padding: 15,
   },
 });
 export default PastData;
