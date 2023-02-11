@@ -49,7 +49,7 @@ const PastData = ({route, navigation}) => {
   };
 
   return (
-    <View style={{backgroundColor: 'paleturquoise', flex: 1}}>
+    <View style={styles.container}>
       <Text style={styles.heading}>Last 10 Days Details</Text>
       {!data && (
         <ActivityIndicator
@@ -64,8 +64,8 @@ const PastData = ({route, navigation}) => {
           renderItem={({item}) => (
             <View style={styles.list}>
               <TouchableHighlight
-                style={{borderRadius:20}}
-                underlayColor="azure"
+                style={{borderRadius: 20}}
+                underlayColor="#C9F7FF"
                 onPress={() =>
                   navigation.navigate('WeatherCard', {
                     temp: item.temp,
@@ -90,10 +90,13 @@ const PastData = ({route, navigation}) => {
   );
 };
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#A3F2FE',
+    flex: 1,
+  },
   list: {
-    borderRadius: 10,
+    borderRadius: 20,
     margin: 5,
-    padding: 3,
     borderBottomWidth: 2,
     borderTopWidth: 2,
     borderLeftWidth: 1,
