@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,createContext} from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
@@ -10,18 +10,18 @@ import WeatherCard from './screens/WeatherCard';
 import SplashScreen from './screens/SplashScreen';
 import PastData from './screens/PastData';
 
-export const SplashContext = React.createContext([true, () => {}]);
+export const SplashContext = createContext();
 
 const Stack = createNativeStackNavigator();
 const App = () => {
-  const showSplashScreen = useState(true);
+  const [showSplashScreen,setShowSplashScreen] = useState(true);
 
   return (
-    <SplashContext.Provider value={showSplashScreen}>
+    <SplashContext.Provider value={{showSplashScreen,setShowSplashScreen}}>
       <SafeAreaView style={styles.container}>
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Splash">
-            {showSplashScreen[0] && (
+            {showSplashScreen && (
               <Stack.Screen
                 name="Splash"
                 component={SplashScreen}
