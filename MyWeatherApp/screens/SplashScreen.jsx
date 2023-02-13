@@ -61,7 +61,7 @@ const SplashScreen = ({navigation}) => {
     Spring();
     setTimeout(() => {
       setShowSplashScreen(false);
-      navigation.navigate('Home', {flag: false});
+      navigation.navigate('Home');
     }, 2500);
   }, []);
 
