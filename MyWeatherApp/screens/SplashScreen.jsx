@@ -11,7 +11,7 @@ import {
 import {SplashContext} from '../App';
 
 const SplashScreen = ({navigation}) => {
-  const [_, setShowSplashScreen] = useContext(SplashContext);
+  const {showSplashScreen, setShowSplashScreen} = useContext(SplashContext);
 
   const fade = new Animated.Value(0);
   const trans = new Animated.Value(0);
